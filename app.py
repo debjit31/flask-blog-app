@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+import psycopg2
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://ctnmetixewemsl:5fb2f05591ca20697c86c8e7ade81b51446a2334493ba0ec81293a84ca448338@ec2-54-211-77-238.compute-1.amazonaws.com:5432/d8c6a9rp970cjj'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
@@ -61,4 +62,5 @@ def about():
     return render_template("about.html")
 
 if __name__ == "__main__":
+    ##db.create_all()
     app.run(debug=True)
